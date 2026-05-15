@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Worx Gym Rugby | 24 Hour Gym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop') center/cover no-repeat;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero .rating {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .rating span {
+            color: #FFD700;
+        }
+
+        .hero .hours-badge {
+            display: inline-block;
+            background: #e63946;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
+        .hero .address {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #c1121f;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #1d3557;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e63946;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .features {
+            background: #1d3557;
+            color: white;
+        }
+
+        .features .section-title {
+            color: white;
+        }
+
+        .features .section-title::after {
+            background: #e63946;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-card h3 {
+            color: #e63946;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .reviews {
+            background: #f8f9fa;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #1d3557;
+        }
+
+        .review-meta {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .location-contact {
+            background: white;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            font-size: 1.4rem;
+            margin-right: 12px;
+            color: #e63946;
+            width: 25px;
+            text-align: center;
+        }
+
+        .footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Fitness Worx Gym Rugby</h1>
+            <div class="rating">
+                <span>★ ★ ★ ★ ★</span> 4.8 (36 reviews)
+            </div>
+            <div class="hours-badge">🕒 Open 24 Hours</div>
+            <p class="address">📍 9 Cottage Leap, Rugby CV21 3XP</p>
+            <a href="tel:01926258210" class="btn">📞 Call 01926 258210</a>
+        </div>
+    </header>
+
+    <!-- About / Owner Message -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Welcome to Fitness Worx</h2>
+            <div class="about-content">
+                <p><strong>Ready to elevate your strength training? 💪</strong> Our brand-new free weights area is now open and waiting for you! We've designed this space to be a true powerhouse for all your lifting needs.</p>
+                <br>
+                <p>What to expect:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Comprehensive range of dumbbells from light to heavy</li>
+                    <li>Dedicated Olympic lifting platforms</li>
+                    <li>Adjustable benches for various exercises</li>
+                    <li>Squat racks and power cages for safe and effective training</li>
+                </ul>
+                <br>
+                <p>This area is perfect for those looking to build serious strength, improve muscle definition, or focus on functional movements. Whether you’re a seasoned lifter or just starting, our equipment supports a wide range of workouts and progressions.</p>
+                <br>
+                <p>Come and experience the difference a well-equipped free weights area makes to your routine. We're proud to offer a motivating and supportive environment right here in Rugby.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Facilities -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Train With Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🏋️ New Free Weights Area</h3>
+                    <p>Dumbbells, Olympic platforms, power cages & squat racks</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧖 Sauna</h3>
+                    <p>Relax and recover in our on-site sauna</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🕒 24/7 Access</h3>
+                    <p>Train whenever it suits your schedule</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏃 HYROX & Classes</h3>
+                    <p>Inspiring group sessions and functional training</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤝 Friendly Staff</h3>
+                    <p>Welcoming team always ready to help</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✨ Brand New Equipment</h3>
+                    <p>Top-quality kit, regularly updated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Members Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best gym in Rugby. I have been a member of others in the past, and this new gym with brand new equipment and friendly staff tops them all. The sauna is a bonus."</p>
+                    <p class="review-author">suky sb</p>
+                    <p class="review-meta">Local Guide · 88 reviews</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Great gym overall! The space is excellent, equipment is new and in perfect condition, and staff are friendly and helpful. Love the HYROX setup."</p>
+                    <p class="review-author">Weronika</p>
+                    <p class="review-meta">Local Guide · 39 reviews</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I love this gym! The classes are the best 45 minutes of my day. Everyone is so friendly, and the trainers are great. Equipment is high quality – I couldn't recommend it more."</p>
+                    <p class="review-author">F-Type Coupé</p>
+                    <p class="review-meta">Local Guide · 56 reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section class="location-contact">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="two-column">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.878383123456!2d-1.263456!3d52.373456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870df456789abcd%3A0x1234567890abcdef!2s9%20Cottage%20Leap%2C%20Rugby%20CV21%203XP!5e0!3m2!1sen!2suk!4v1685000000000" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-info">
+                    <p><i>📍</i> <strong>Address:</strong><br>9 Cottage Leap, Rugby CV21 3XP</p>
+                    <p><i>📞</i> <strong>Phone:</strong><br><a href="tel:01926258210">01926 258210</a></p>
+                    <p><i>🌐</i> <strong>Website:</strong><br><a href="https://fitness-worx.com" target="_blank">fitness-worx.com</a></p>
+                    <p><i>🕒</i> <strong>Open 24 hours</strong><br>Fridays typically less busy</p>
+                    <a href="https://www.google.com/maps/dir//9+Cottage+Leap,+Rugby+CV21+3XP" target="_blank" class="btn">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Fitness Worx Gym Rugby. All rights reserved. | 9 Cottage Leap, Rugby CV21 3XP</p>
+    </footer>
+
+</body>
+</html>
